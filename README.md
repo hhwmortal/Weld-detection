@@ -2,6 +2,7 @@
 **DCP-Det: A Defect Contrast Prior-Guided Detector for X-ray Weld Defect Detection**
 This repository provides the official implementation of **DCP-Det**, a defect contrast prior-guided object detector developed for X-ray weld defect detection.
 DCP-Det explicitly incorporates local radiographic contrast information into both **multi-scale feature representation** and **bounding-box localization optimization**. In addition, this repository provides the official data split and annotation information for the **Engineering Nondestructive-testing Dataset (END)**.
+
 ## Overview of the Architecture
 Automatic defect detection in X-ray weld radiographs is challenging because defects often exhibit:
 - weak local contrast;
@@ -17,6 +18,7 @@ The DCP is incorporated into the detector at two complementary levels:
    Integrates defect-sensitive contrast information with context-aware feature enhancement at high-level pyramid features.
 2. **DCP-DIoU**  
    Uses DCP-derived contrast characteristics to adaptively weight positive RoI regression losses, emphasizing contrast-difficult samples during bounding-box refinement.
+
 ## END Dataset
 The **Engineering Nondestructive-testing Dataset (END)** contains:
 - **1,180 X-ray radiographs**
@@ -32,5 +34,6 @@ The five categories are:
 | 5 | Pore |
 Unlike simplified settings in which radiographs are decomposed into isolated single-defect samples, END preserves the original radiographic scenes. Therefore, multiple defect instances and different defect categories may coexist within the same image.
 The dataset from Xiangyang Central Hospital can be downloaded using the following links:Google Drive:[(https://drive.google.com/uc?export=download&id=11CiATDjSktr5mObumnQQ6DIikDazKfj2)] Please verify the numerical category IDs against the released annotation files before using them in a custom implementation.
+
 ## Installation
 The reference environment uses Python 3.8.18, PyTorch 2.1.0, torchvision 0.16.0, and a CUDA 12.1 PyTorch build. Install a PyTorch build appropriate foryour platform, then install the remaining dependencies.
