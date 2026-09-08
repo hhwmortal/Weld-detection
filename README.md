@@ -35,7 +35,7 @@ The five categories are:
 | 5 | Pore |
 
 Unlike simplified settings in which radiographs are decomposed into isolated single-defect samples, END preserves the original radiographic scenes. Therefore, multiple defect instances and different defect categories may coexist within the same image.
-The dataset from Xiangyang Central Hospital can be downloaded using the following links:Google Drive:[(https://drive.google.com/uc?export=download&id=11CiATDjSktr5mObumnQQ6DIikDazKfj2)] Please verify the numerical category IDs against the released annotation files before using them in a custom implementation.
+The dataset can be downloaded using the following links:Google Drive:[(https://drive.google.com/uc?export=download&id=11CiATDjSktr5mObumnQQ6DIikDazKfj2)] Please verify the numerical category IDs against the released annotation files before using them in a custom implementation.
 
 ## Installation
 The reference environment uses Python 3.8.18, PyTorch 2.1.0, torchvision 0.16.0, and a CUDA 12.1 PyTorch build. Install a PyTorch build appropriate foryour platform, then install the remaining dependencies.
