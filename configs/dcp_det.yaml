@@ -1,0 +1,77 @@
+model:
+  name: DCP-Det
+  backbone: resnet50
+  trainable_backbone_layers: 3
+
+dataset:
+  name: END
+  num_classes: 5
+  classes:
+    1: Crack
+    2: LF
+    3: LP
+    4: SL
+    5: Pore
+
+dcp:
+  kernel_size: 31
+  levels: [P4, P5]
+  phys_gamma_init: 0.0
+  shared_gamma: true
+  input: normalized_padded
+
+dcp_diou:
+  lambda: 1.0
+  epsilon: 0.000001
+  quality_source: matched_gt_dcp_mean
+  normalization: batch_global_positive_rois
+  detach_quality: true
+  detach_weights: true
+
+training:
+  epochs: 100
+  batch_size: 4
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: false
+  exclude_empty_train_images: true
+  aspect_ratio_group_factor: 3
+  optimizer: SGD
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+
+scheduler:
+  name: StepLR
+  step_size: 15
+  gamma: 0.33
+
+warmup:
+  enabled: true
+  epoch: 0
+  factor: 0.001
+  iterations: 204
+
+input:
+  min_size: 800
+  max_size: 1333
+
+inference:
+  box_score_thresh: 0.05
+  box_nms_thresh: 0.5
+  rpn_nms_thresh: 0.7
+  detections_per_image: 100
+
+precision:
+  amp: false
+
+seed:
+  value: 42
+  deterministic_algorithms: false
+
+selection:
+  metric: validation_AP50
+
+initialization:
+  backbone: torchvision_ResNet50_IMAGENET1K_V1
+  detector: torchvision_FasterRCNN_ResNet50_FPN_COCO_V1

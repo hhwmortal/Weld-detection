@@ -1,0 +1,8 @@
+# Reference runtime: Python 3.8.18 with CUDA 12.1 supplied by the PyTorch build.
+torch==2.1.0
+torchvision==0.16.0
+numpy>=1.21,<2
+Pillow>=8.4
+PyYAML>=6.0
+pycocotools>=2.0.7
+timm>=0.9,<1.0
