@@ -33,6 +33,7 @@ The five categories are:
 | 3 | IP |
 | 4 | SI |
 | 5 | Pore |
+
 Unlike simplified settings in which radiographs are decomposed into isolated single-defect samples, END preserves the original radiographic scenes. Therefore, multiple defect instances and different defect categories may coexist within the same image.
 The dataset from Xiangyang Central Hospital can be downloaded using the following links:Google Drive:[(https://drive.google.com/uc?export=download&id=11CiATDjSktr5mObumnQQ6DIikDazKfj2)] Please verify the numerical category IDs against the released annotation files before using them in a custom implementation.
 
